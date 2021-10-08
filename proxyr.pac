@@ -4,7 +4,8 @@ function FindProxyForURL(url, host) {
   proxyh = "SOCKS 127.0.0.1:8081"
   
 if (shExpMatch(host, "*.arup.com") ||  // match IP address
-       shExpMatch(host, "10.*")) {  // match `server1`, `server23`, 
+       shExpMatch(host, "10.*") ||
+       shExpMatch(host, "*whoami*)) {  // match `server1`, `server23`, 
      return proxya;
    }
    // Route everything else through other one!
