@@ -1,6 +1,6 @@
 function FindProxyForURL(url, host) {
   // Setup a SOCKS proxy on port 1280.
-  proxy = "SOCKS 192.168.1.2:8082"
+  proxy = "SOCKS 192.168.1.2:8080"
   
 if (shExpMatch(host, "*.arup.com") ||  // match IP address
        shExpMatch(host, "10.*")) {  // match `server1`, `server23`, 
