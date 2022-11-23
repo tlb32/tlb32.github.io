@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>constructor-selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+This is so you can copy your frickin' file path to the clipboard, for pasting into windows exporer
+<!-- Target -->
+<textarea id="bar">Mussum ipsum cacilds...</textarea>
+<!-- Trigger -->
+<button class="btn" data-clipboard-target="#bar">
+    <img src="clippy.svg" style="width:50px;" alt="Copy to clipboard">
+</button>
+
+
+<script>
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+  let value = params.some_key; // "some_value"
+  document.getElementById("bar").innerHTML = value;
+</script>
+
+    <!-- 2. Include library -->
+    <script src="clipboard.min.js"></script>
+
+    <!-- 3. Instantiate clipboard by passing a string selector -->
+    <script>
+      var clipboard = new ClipboardJS('.btn');
+
+      clipboard.on('success', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+      });
+
+      clipboard.on('error', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+      });
+    </script>
+  </body>
+</html>
