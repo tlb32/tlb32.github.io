@@ -19,7 +19,7 @@ This is so you can copy your frickin' file path to the clipboard, for pasting in
 
 
 <div id="example-target" class="example">
-  <div class="input-group">
+  <div>
   <input id="foo" type="text" value="https://github.com/zenorocha/clipboard.js.git">
   <span class="input-group-button">
   <button class="btn" type="button" data-clipboard-demo="" data-clipboard-target="#foo">
@@ -35,7 +35,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   });
   // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
   let value = params.some_key; // "some_value"
-  document.getElementById("foo").innerHTML = value;
+  document.getElementById("foo").value = value;
 </script>
 
     <!-- 2. Include library -->
