@@ -19,6 +19,15 @@
     Cut to clipboard
 </button>
 
+<script>
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+  });
+  // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+  let value = params.some_key; // "some_value"
+  document.getElementById("bar").innerHTML = value;
+</script>
+
     <!-- 2. Include library -->
     <script src="clipboard.min.js"></script>
 
