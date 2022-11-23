@@ -6,25 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <!-- 1. Define some markup -->
-    <button class="btn" data-clipboard-text="1">Copy</button>
-    <button class="btn" data-clipboard-text="2">Copy</button>
-    <button class="btn" data-clipboard-text="3">Copy</button>
 
-    <!-- Target -->
-<textarea id="bar">Mussum ipsum cacilds...</textarea>
+<!-- Target -->
+<input id="bar" value="https://github.com/zenorocha/clipboard.js.git">
 
 <!-- Trigger -->
-<button class="btn" data-clipboard-action="cut" data-clipboard-target="#bar">
-    Cut to clipboard
+<button class="btn" data-clipboard-target="#foo">
+    <img src="Octicons-clippy.svg" alt="Copy to clipboard">
 </button>
+
 
 <script>
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
   });
   // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-  let value = params.some_key; // "some_value"
+  let value = params.f; // "some_value"
   document.getElementById("bar").innerHTML = value;
 </script>
 
