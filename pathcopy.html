@@ -12,14 +12,22 @@ This is so you can copy your frickin' file path to the clipboard, for pasting in
 
 <div id="example-target">
   <div class="input-group" style="width: 400px;">
-  <input id="foo" type="text" value="https://github.com/zenorocha/clipboard.js.git" >
+  <input id="linkbox" type="text" value="file://none" >
   <span class="input-group-button">
-  <button class="btn" type="button" data-clipboard-demo="" data-clipboard-target="#foo">
+  <button class="btn" type="button" data-clipboard-demo="" data-clipboard-target="#linkbox">
   <img class="clippy" src="pathcopy_assets/clippy.svg" width="13" alt="Copy to clipboard">
   </button>
   </span>
   </div>
-  </div>
+</div>
+<small>
+  <ol>
+    <li>Paste the link above into a Windows Explorer window</li>
+    <li>Pro tip: place a windows shortcut on your desktop with a keyboard shortcut to automate this.</li>
+    <li></li>
+  </ol>
+
+</small>
 
 <script>
 const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -27,7 +35,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   });
   // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
   let value = params.some_key; // "some_value"
-  document.getElementById("foo").value = value;
+  document.getElementById("linkbox").value = value;
 </script>
 
     <!-- 2. Include library -->
